@@ -100,7 +100,9 @@
         async loadDogs(){
           try{
             const res = await fetch('/api/dogs');
-            
+            if(!res.ok){
+              alert()
+            }
           }catch(err){
             alert('Error loading dogs: ' + err);
           }
