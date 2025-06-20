@@ -6,12 +6,12 @@ module.exports = function(db) {
     /* GET /api/dogs */
     router.get('/dogs', async (req, res) => {
         try {
-            const [dogs] = await db.execute(`
+            const [rows] = await db.execute(`
                 SELECT d.name as dog_name, d.size, u.username as owner_username
                 FROM Dogs d
                 JOIN Users u on d.owner_id = u.user_id
                 `);
-            res.json(dogs);
+            res.json(rows);
         }catch(err){
             res.status(500).json({ error: 'Failed to fetch dogs' });
         }
