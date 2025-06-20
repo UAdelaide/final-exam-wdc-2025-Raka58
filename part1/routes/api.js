@@ -7,7 +7,7 @@ module.exports = function(db) {
     router.get('/dogs', async (req, res) => {
         try {
             const [dogs] = await db.execute(`
-                SELECT d.name as dog_name,  FROM Dogs
+                SELECT d.name as dog_name, d.size, ,  FROM Dogs
                 `);
             res.json(dogs);
         }catch(err){
