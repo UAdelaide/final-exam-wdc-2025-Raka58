@@ -17,7 +17,16 @@ module.exports = function(db) {
         try {
 
         }catch(err){
-            res.status(500).json({ error: 'Failed to fetch dogs' });
+            res.status(500).json({ error: 'Failed to fetch walk requests' });
+        }
+    });
+
+    /* GET /api/walkers/summary */
+    router.get('/walkrequests/open', async (req, res) => {
+        try {
+
+        }catch(err){
+            res.status(500).json({ error: 'Failed to fetch walk requests' });
         }
     });
 
