@@ -46,7 +46,7 @@
               body: JSON.stringify({ username: this.username, password: this.password })
             });
             const data = await res.json();
-            // if an error 
+            // if an error occurred, send an alert and return
             if (!res.ok){
               alert('Login failed.');
               return;
