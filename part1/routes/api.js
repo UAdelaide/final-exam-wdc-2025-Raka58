@@ -41,7 +41,7 @@ module.exports = function(db) {
                 SELECT u.username AS walker_username, .....
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'accepted'
-                LEFT JOIN WalkRequests wrq ON wa.request_id = wrq.request_id AND wr
+                LEFT JOIN WalkRequests wrq ON wa.request_id = wrq.request_id AND wrq.status = 'completed'
                 LEFT JOIN WalkRatings wrt ON u.user_id = wrt.walker_id
                 WHERE u.role = 'walker'
                 `);
