@@ -147,7 +147,7 @@ let db;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const apiRouter 
+var apiRouter = 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
