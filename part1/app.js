@@ -127,6 +127,19 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'emily22'), 'Opal', 'medium')
       `);
     }
+    // Insert data if WalkRequests table is empty
+    const [dogsRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (dogsRows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO Dogs (owner_id, name, size)
+        VALUES
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Fred', 'large'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Milly', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'emily22'), 'Opal', 'medium')
+      `);
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
