@@ -69,8 +69,8 @@ router.post('/logout', (req, res) => {
   });
 });
 
-// GET dogs
-router.get('/dogs', async (req, res) => {
+// GET getdogs
+router.get('/getdogs', async (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
