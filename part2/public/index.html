@@ -46,7 +46,7 @@
               <td>{{ dog.size }}</td>
               <td>{{ dog.owner_username }}</td>
               <td>
-                <img v-if="dog.photoURL" :src="dog.photoURL" alt="dog.dog_name" class="">
+                <img v-if="dog.photoURL" :src="dog.photoURL" alt="dog.dog_name" class="img-thumbnail">
                 <p v-else>Image loading...</p>
               </td>
             </tr>
