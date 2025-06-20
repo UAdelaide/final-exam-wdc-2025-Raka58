@@ -54,7 +54,7 @@
             const user = data.user;
             // redirect the user to owner or walker dashboard depending on their role
             if (user.role === 'owner'){
-              
+              window.location.href = 'owner-dashboard.html';
             }
           }catch(err){
             alert('Error during login: ' + err);
