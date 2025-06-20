@@ -70,7 +70,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            if ()
+            if (!currentUserID) throw new Error('User ')
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
