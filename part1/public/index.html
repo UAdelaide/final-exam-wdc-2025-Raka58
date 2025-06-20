@@ -27,6 +27,7 @@
                 async fetchDogURL(){
                     try {
                         var res = await fetch('https://dog.ceo/api/breeds/image/random');
+                        var data = await res.json();
                     }catch(err){
                         alert('Failed to fetch dog image: ' + err);
                     }
