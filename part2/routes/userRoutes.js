@@ -70,14 +70,14 @@ router.post('/logout', (req, res) => {
 });
 
 // GET dogs
-router.get('/dogs', (req, res) => {
+router.get('/dogs', async (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
   const owner_id = req.session.user.user_id;
   try{
     const [rows] = await db.query(`
-      
+      SELECT * FROM 
       `)
   }catch(error){
     res.status(500).json({ error: 'Get dogs failed' });
