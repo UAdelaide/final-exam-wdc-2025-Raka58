@@ -106,7 +106,7 @@
             const dogs = await res.json();
             for (dog of dogs){
               try{
-                const photoRes 
+                const photoRes = await fetch('')
               }catch(err2){
                 alert('Error fetching dog photo: ' + err2);
                 dog.photoURL = '';
