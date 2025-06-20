@@ -76,7 +76,6 @@ router.get('/dogs', async (req, res) => {
   }
   // get the owner id from user's session
   const owner_id = req.session.user.user_id;
-  console.log('user_id: ' + owner_id);
   // query database for this user's dogs
   try{
     const [rows] = await db.query(`
@@ -84,7 +83,6 @@ router.get('/dogs', async (req, res) => {
       FROM Dogs
       WHERE owner_id = ?
       `, [owner_id]);
-      console.log('dogs: ' + rows);
     res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Get dogs failed' });
