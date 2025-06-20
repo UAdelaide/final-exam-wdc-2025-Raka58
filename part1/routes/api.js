@@ -42,6 +42,7 @@ module.exports = function(db) {
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id
                 LEFT JOIN WalkRequests wr ON wa.request_id = wr.request_id
+                LEFT JOIN WalkRatings wrt
                 `);
             res.json(rows);
         }catch(err){
