@@ -46,11 +46,12 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = ref(0);
+        const user = ref(null);
 
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me');
+            const 
           } catch (err) {
             error.value = err.message;
         }
