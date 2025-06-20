@@ -38,8 +38,9 @@ module.exports = function(db) {
     router.get('/walkers/summary', async (req, res) => {
         try {
             const [rows] = await db.execute(`
-                SELECT u.username AS walker_username,
-
+                SELECT u.username AS walker_username, .....
+                FROM Users u
+                
                 `);
             res.json(rows);
         }catch(err){
