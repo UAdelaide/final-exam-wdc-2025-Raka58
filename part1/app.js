@@ -147,9 +147,10 @@ let db;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-var apiRouter = require('./routes/api');
+var apiRouter = require('./routes/api')(db);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter)
 
 module.exports = app;
