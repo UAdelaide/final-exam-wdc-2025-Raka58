@@ -115,8 +115,8 @@ let db;
       `);
     }
     // Insert data if Dogs table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    if (rows[0].count === 0) {
+    const [dogsRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (dogsRows[0].count === 0) {
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role)
         VALUES
