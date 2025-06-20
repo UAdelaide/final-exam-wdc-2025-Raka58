@@ -55,6 +55,8 @@
             // redirect the user to owner or walker dashboard depending on their role
             if (user.role === 'owner'){
               window.location.href = 'owner-dashboard.html';
+            }else if (user.role === 'walker'){
+              window.location.href = 'walker-dashboard.html';
             }
           }catch(err){
             alert('Error during login: ' + err);
