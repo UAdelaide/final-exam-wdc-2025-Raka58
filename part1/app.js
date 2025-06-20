@@ -140,13 +140,16 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Opal'), '2025-06-12 10:00:00', 40, 'Aston St', 'open')
       `);
     }
+
+
+    var apiRouter = require('./routes/api')(db);
+    app.use('/api', apiRouter);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
 })();
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
