@@ -55,13 +55,13 @@
                 downvote(){
                     alert('Downvoted Agatha');
                 },
-                showPopup1(){
-                    
+                popup1(){
+
                 }
             },
             mounted() {
                 this.fetchDogURL();
-                setTimeout(showPopup1, 2000);
+                setTimeout(popup1(), 2000);
             }
         }).mount('#app');
     </script>
