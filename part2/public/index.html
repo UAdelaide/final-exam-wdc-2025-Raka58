@@ -28,9 +28,7 @@
 
         <!-- table of dogs -->
         <h2 class="mb-4 text-secondary">All Registered Dogs</h2>
-        <span v-if="loadingDogs">
-          <p>Loading dog list...</p>
-        </span>
+        <span v-if="loadingDogs">Loading dog list...</span>
         <table v-else class="table">
           <thead>
             <tr>
