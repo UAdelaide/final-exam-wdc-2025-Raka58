@@ -20,6 +20,11 @@ module.exports = function(db) {
     /* GET /api/walkrequests/open */
     router.get('/walkrequests/open', async (req, res) => {
         try {
+            const [rows] = await db.execute(`
+                SELECT
+                
+                `);
+            res.json(rows);
 
         }catch(err){
             res.status(500).json({ error: 'Failed to fetch walk requests' });
