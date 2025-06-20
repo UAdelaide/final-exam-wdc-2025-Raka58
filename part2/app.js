@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Session setup
 app.use(session({
-    secret: 'secret_key',
+    secret: 'session_secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
