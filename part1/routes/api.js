@@ -22,11 +22,11 @@ module.exports = function(db) {
     });
 
     /* GET /api/walkers/summary */
-    router.get('/walkrequests/open', async (req, res) => {
+    router.get('/walkers/summary', async (req, res) => {
         try {
 
         }catch(err){
-            res.status(500).json({ error: 'Failed to fetch walk requests' });
+            res.status(500).json({ error: 'Failed to fetch walkers summary' });
         }
     });
 
