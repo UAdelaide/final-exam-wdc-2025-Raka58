@@ -75,7 +75,11 @@ router.get('/dogs', (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   const owner_id = req.session.user.user_id;
-  
+  try{
+
+  }catch(err){
+    
+  }
 });
 
 module.exports = router;
