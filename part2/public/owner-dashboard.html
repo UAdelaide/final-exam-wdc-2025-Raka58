@@ -96,10 +96,10 @@
         // new function to load dogs
         async function loadDogs() {
           try{
-
+            
+          }catch(err){
+            error.value = 'Failed to load dogs';
           }
-        }catch(err){
-          error.value = 'Failed to load dogs';
         }
 
         async function submitWalkRequest() {
