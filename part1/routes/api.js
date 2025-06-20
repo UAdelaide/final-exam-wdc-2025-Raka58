@@ -3,6 +3,15 @@ var express = require('express');
 module.exports = function(db) {
     var router = express.Router();
 
+    /* GET /api/dogs */
+    router.get('/dogs', async (req, res) => {
+        try {
+
+        }catch(err){
+            
+        }
+    });
+
     return router;
 };
 
