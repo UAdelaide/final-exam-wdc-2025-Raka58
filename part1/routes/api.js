@@ -40,7 +40,7 @@ module.exports = function(db) {
             const [rows] = await db.execute(`
                 SELECT u.username AS walker_username, .....
                 FROM Users u
-                LEFT JOIN WalkApplications wa ON 
+                LEFT JOIN WalkApplications wa ON u.
                 `);
             res.json(rows);
         }catch(err){
