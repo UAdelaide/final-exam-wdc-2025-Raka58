@@ -9,7 +9,7 @@ module.exports = function(db) {
             const [dogs] = await db.execute(`
                 SELECT d.name as dog_name, d.size, u.username as owner_username
                 FROM Dogs d
-                JOIN Users u on d.owner_id = 
+                JOIN Users u on d.owner_id = u.user_id
                 `);
             res.json(dogs);
         }catch(err){
