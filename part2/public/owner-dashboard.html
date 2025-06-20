@@ -121,7 +121,7 @@
         // new function for the logout button
         async function logout(){
           try{
-            // POST request to /a;i/
+            // POST request to /api/users/logout which will destroy the session
             const res = await fetch('/api/users/logout', {
               method: 'POST'
             });
