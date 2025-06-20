@@ -57,6 +57,8 @@
               window.location.href = 'owner-dashboard.html';
             }else if (user.role === 'walker'){
               window.location.href = 'walker-dashboard.html';
+            }else{
+              alert('')
             }
           }catch(err){
             alert('Error during login: ' + err);
