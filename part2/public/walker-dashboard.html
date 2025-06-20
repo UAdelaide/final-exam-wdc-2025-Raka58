@@ -105,6 +105,7 @@
         }
 
         onMounted(() => {
+          // get the current user before loading walk requests
           getCurrentUser();
           loadWalkRequests();
         });
