@@ -41,7 +41,7 @@ module.exports = function(db) {
                 SELECT u.username AS walker_username, .....
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id
-                
+                LEFT JOIN 
                 `);
             res.json(rows);
         }catch(err){
