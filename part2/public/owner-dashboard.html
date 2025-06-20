@@ -125,10 +125,9 @@
             const res = await fetch('/api/users/logout', {
               method: 'POST'
             });
-            // if logout succeeded, redirect to index.html
             if (!res.ok) {
               throw new Error(res.error || 'Error logging out');
-            }else{
+            }else{ // if logout succeeded, redirect to index.html
               window.location.href = '/';
             }
           } catch (err) {
