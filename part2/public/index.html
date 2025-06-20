@@ -103,7 +103,7 @@
             if(!res.ok){
               throw new Error('Failed to fetch dogs information');
             }
-            const dogs
+            const dogs = await res.json();
           }catch(err){
             alert('Error loading dogs: ' + err);
           }
