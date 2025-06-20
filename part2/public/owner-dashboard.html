@@ -11,63 +11,63 @@
   <div id="app" class="container py-4">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
-    <div class="mb-4 d-flex justify-content-between">
-      <h1 class="text-primary">Owner Dashboard</h1>
-      <button type="button" @click="logout" class="btn btn-outline-danger">Logout</button>
-    </div>
+        <div class="mb-4 d-flex justify-content-between">
+          <h1 class="text-primary">Owner Dashboard</h1>
+          <button type="button" @click="logout" class="btn btn-outline-danger">Logout</button>
+        </div>
 
-    <!-- Walk request form -->
-    <div class="card mb-4">
-      <div class="card-header bg-primary text-white">
-        Create New Walk Request
-      </div>
-      <div class="card-body">
-        <form @submit.prevent="submitWalkRequest">
-          <div class="mb-3">
-            <label class="form-label">Dog ID</label>
-            <input v-model="form.dog_id" type="number" class="form-control" required>
+        <!-- Walk request form -->
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            Create New Walk Request
           </div>
-          <div class="mb-3">
-            <label class="form-label">Requested Date & Time</label>
-            <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Duration (minutes)</label>
-            <input v-model="form.duration_minutes" type="number" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Location</label>
-            <input v-model="form.location" type="text" class="form-control" required>
-          </div>
-          <button type="submit" class="btn btn-success">Create Walk</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Success or error messages -->
-    <div v-if="message" class="alert alert-info">{{ message }}</div>
-    <div v-if="error" class="alert alert-danger">{{ error }}</div>
-
-    <!-- List of walk requests -->
-    <h2 class="mb-3">My Walk Requests</h2>
-    <div class="row" v-if="walks.length > 0">
-      <div class="col-md-6 mb-4" v-for="walk in walks" :key="walk.request_id">
-        <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Request #{{ walk.request_id }}</h5>
-            <p class="card-text">
-              <strong>Dog:</strong> {{ walk.dog_name }} ({{ walk.size }})<br>
-              <strong>Date:</strong> {{ new Date(walk.requested_time).toLocaleString() }}<br>
-              <strong>Duration:</strong> {{ walk.duration_minutes }} minutes<br>
-              <strong>Location:</strong> {{ walk.location }}<br>
-              <strong>Status:</strong> {{ walk.status }}
-            </p>
+            <form @submit.prevent="submitWalkRequest">
+              <div class="mb-3">
+                <label class="form-label">Dog ID</label>
+                <input v-model="form.dog_id" type="number" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Requested Date & Time</label>
+                <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Duration (minutes)</label>
+                <input v-model="form.duration_minutes" type="number" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Location</label>
+                <input v-model="form.location" type="text" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-success">Create Walk</button>
+            </form>
           </div>
         </div>
+
+        <!-- Success or error messages -->
+        <div v-if="message" class="alert alert-info">{{ message }}</div>
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
+
+        <!-- List of walk requests -->
+        <h2 class="mb-3">My Walk Requests</h2>
+        <div class="row" v-if="walks.length > 0">
+          <div class="col-md-6 mb-4" v-for="walk in walks" :key="walk.request_id">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Request #{{ walk.request_id }}</h5>
+                <p class="card-text">
+                  <strong>Dog:</strong> {{ walk.dog_name }} ({{ walk.size }})<br>
+                  <strong>Date:</strong> {{ new Date(walk.requested_time).toLocaleString() }}<br>
+                  <strong>Duration:</strong> {{ walk.duration_minutes }} minutes<br>
+                  <strong>Location:</strong> {{ walk.location }}<br>
+                  <strong>Status:</strong> {{ walk.status }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p v-else>No walk requests yet.</p>
       </div>
-    </div>
-    <p v-else>No walk requests yet.</p>
-    </div>
     </div>
   </div>
 
