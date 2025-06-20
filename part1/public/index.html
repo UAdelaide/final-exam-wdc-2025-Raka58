@@ -56,19 +56,19 @@
                     alert('Downvoted Agatha');
                 },
                 popup1(){
-                    showPopup1 = true;
+                    this.showPopup1 = true;
                 },
                 closePopup1(){
-                    showPopup1 = false;
-                    showPopup2 = true;
+                    this.showPopup1 = false;
+                    this.showPopup2 = true;
                 },
                 closePopup2(){
-                    showPopup2 = false;
+                    this.showPopup2 = false;
                 }
             },
             mounted() {
                 this.fetchDogURL();
-                setTimeout(popup1, 200);
+                setTimeout(this.popup1(), 200);
             }
         }).mount('#app');
     </script>
