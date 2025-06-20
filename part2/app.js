@@ -18,9 +18,9 @@ app.use(session({
     cookie: {
         maxAge: 60*60*1000, // 1 hour
         httpOnly: true,
-        
+        secure: false
     }
-}))
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
