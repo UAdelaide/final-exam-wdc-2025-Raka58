@@ -103,8 +103,8 @@
             if(!res.ok){
               throw new Error('Failed to fetch dogs information');
             }
-            const dog = await res.json();
-            for (let dog of dogs){
+            this.dogs = await res.json();
+            for (let dog of this.dogs){
               try{
                 const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
                 if(!photoRes.ok){
