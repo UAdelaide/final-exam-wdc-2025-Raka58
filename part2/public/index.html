@@ -101,8 +101,9 @@
           try{
             const res = await fetch('/api/dogs');
             if(!res.ok){
-              throw new Error('Failed to fetch dogs');
+              throw new Error('Failed to fetch dogs information');
             }
+            const dogs
           }catch(err){
             alert('Error loading dogs: ' + err);
           }
