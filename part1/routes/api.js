@@ -21,7 +21,8 @@ module.exports = function(db) {
     router.get('/walkrequests/open', async (req, res) => {
         try {
             const [rows] = await db.execute(`
-                SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.
+                SELECT wr.request_id, d.name AS dog_name, wr.requested_time,
+                    wr.duration_minutes, wr.location, u.username AS owner_username
                 FROM WalkRequests wr
                 JOIN Dogs d ON wr.dog_id = d.dog_id
                 JOIN Users u ON wr.owner_id = u.user_id
