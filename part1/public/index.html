@@ -68,9 +68,7 @@
             },
             mounted() {
                 this.fetchDogURL();
-                setTimeout(() => {
-                    this.showPopup1 = true;
-                }), 5000);
+                setTimeout(() => { this.showPopup1}), 5000);
             }
         }).mount('#app');
     </script>
