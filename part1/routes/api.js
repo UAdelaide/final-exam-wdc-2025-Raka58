@@ -23,7 +23,8 @@ module.exports = function(db) {
             const [rows] = await db.execute(`
                 SELECT
                 FROM WalkRequests wr
-                JOIN Dogs d ON wr.dog_id = 
+                JOIN Dogs d ON wr.dog_id = d.dog_id
+                JOIN Users u ON wr.owner_id = u.dog_id
                 `);
             res.json(rows);
 
