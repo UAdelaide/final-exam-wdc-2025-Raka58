@@ -78,7 +78,7 @@ router.get('/dogs', (req, res) => {
   try{
 
   }catch(error){
-    res.status(500).json({ error: 'Login failed' });
+    res.status(500).json({ error: 'Get dogs failed' });
   }
 });
 
