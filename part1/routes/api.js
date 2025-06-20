@@ -29,7 +29,6 @@ module.exports = function(db) {
                 WHERE wr.status = 'open'
                 `);
             res.json(rows);
-
         }catch(err){
             res.status(500).json({ error: 'Failed to fetch walk requests' });
         }
