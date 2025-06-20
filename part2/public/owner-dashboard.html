@@ -121,9 +121,11 @@
         // new function for the logout button
         async function logout(){
           try{
+            // POST request to /a;i/
             const res = await fetch('/api/users/logout', {
               method: 'POST'
-            })
+            });
+            //
           } catch (err) {
             error.value = err.message;
             message.value = '';
