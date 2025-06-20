@@ -126,6 +126,7 @@
               method: 'POST'
             });
             // if logout succeeded, redirect to index.html
+            if (!res.ok) throw new Error(result.error || 'Error logging out');
             if (res.ok) { window.location.href = '/'; }
           } catch (err) {
             error.value = err.message;
