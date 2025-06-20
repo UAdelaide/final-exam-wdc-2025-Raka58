@@ -77,6 +77,24 @@
           }
         }
 
+        // new function for the logout button
+        async function logout(){
+          try{
+            // POST request to /api/users/logout which will destroy the session
+            const res = await fetch('/api/users/logout', {
+              method: 'POST'
+            });
+            if (!res.ok) {
+              throw new Error(res.error || 'Error logging out');
+            }else{ // if logout succeeded, redirect to index.html
+              window.location.href = '/';
+            }
+          } catch (err) {
+            error.value = err.message;
+            message.value = '';
+          }
+        }
+
         onMounted(() => {
           loadWalkRequests();
         });
@@ -85,7 +103,8 @@
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          logout
         };
       }
     }).mount('#app');
