@@ -77,8 +77,8 @@ router.get('/dogs', (req, res) => {
   const owner_id = req.session.user.user_id;
   try{
 
-  }catch(err){
-    
+  }catch(error){
+    res.status(500).json({ error: 'Login failed' });
   }
 });
 
