@@ -38,7 +38,7 @@ module.exports = function(db) {
     router.get('/walkers/summary', async (req, res) => {
         try {
             const [rows] = await db.execute(`
-                SELECT u.username AS walker_username, COUNT(wrt.)
+                SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings
                 COUNT(wrq.request_id) AS completed_walks
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'accepted'
