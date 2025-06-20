@@ -21,11 +21,11 @@ module.exports = function(db) {
     router.get('/walkrequests/open', async (req, res) => {
         try {
             const [rows] = await db.execute(`
-                SELECT
+                SELECT wr.
                 FROM WalkRequests wr
                 JOIN Dogs d ON wr.dog_id = d.dog_id
                 JOIN Users u ON wr.owner_id = u.user_id
-                WHERE 
+                WHERE wr.status = 'open'
                 `);
             res.json(rows);
 
