@@ -24,7 +24,8 @@ module.exports = function(db) {
                 SELECT
                 FROM WalkRequests wr
                 JOIN Dogs d ON wr.dog_id = d.dog_id
-                JOIN Users u ON wr.owner_id = u.dog_id
+                JOIN Users u ON wr.owner_id = u.user_id
+                WHERE 
                 `);
             res.json(rows);
 
