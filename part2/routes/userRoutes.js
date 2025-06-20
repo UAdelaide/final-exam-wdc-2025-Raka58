@@ -76,7 +76,9 @@ router.get('/dogs', (req, res) => {
   }
   const owner_id = req.session.user.user_id;
   try{
-    const [rows] = db.query()
+    const [rows] = await db.query(`
+      
+      `)
   }catch(error){
     res.status(500).json({ error: 'Get dogs failed' });
   }
