@@ -47,7 +47,7 @@
               <td>{{ dog.owner_username }}</td>
               <td>
                 <img v-if="dog.photoURL" :src="dog.photoURL" alt="dog.dog_name">
-                
+                <p v-else>Image loading...</p>
               </td>
             </tr>
           </tbody>
