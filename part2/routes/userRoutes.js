@@ -84,7 +84,6 @@ router.get('/dogs', async (req, res) => {
       FROM Dogs
       WHERE owner_id = ?
       `, [owner_id]);
-      console.log(rows);
     res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Get dogs failed' });
