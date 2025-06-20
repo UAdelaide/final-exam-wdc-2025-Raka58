@@ -1,7 +1,8 @@
 var express = require('express');
-var router = express.Router();
 
 module.exports = function(db) {
+    var router = express.Router();
+
     
 }
 // /* GET home page. */
