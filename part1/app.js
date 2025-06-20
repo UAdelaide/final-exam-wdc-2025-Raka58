@@ -141,7 +141,7 @@ let db;
       `);
     }
 
-
+    // now make the api router after db is set up
     var apiRouter = require('./routes/api')(db);
     app.use('/api', apiRouter);
   } catch (err) {
