@@ -106,7 +106,9 @@
             const dogs = await res.json();
             for (dog of dogs){
               try{
-                const photoRes = await fetch('')
+                const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
+                        var photoData = await photoRes.json();
+                        this.dogImageURL = data.message;
               }catch(err2){
                 alert('Error fetching dog photo: ' + err2);
                 dog.photoURL = '';
