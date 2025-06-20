@@ -38,7 +38,7 @@ module.exports = function(db) {
     router.get('/walkers/summary', async (req, res) => {
         try {
             const [rows] = await db.execute(`
-                SELECT
+                SELECT username AS walker_username, 
                 `);
             res.json(rows);
         }catch(err){
