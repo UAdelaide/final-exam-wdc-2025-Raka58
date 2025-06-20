@@ -14,7 +14,8 @@
 
     <form @submit.prevent="login">
       <label for="username">Username:</label>
-      <input v-model="username" type="text" id="username">
+      <input v-model="username" type="text" id="username" required>
+
     </form>
 
     <!-- <p class="lead">Connect with trusted walkers for your beloved dog!</p>
