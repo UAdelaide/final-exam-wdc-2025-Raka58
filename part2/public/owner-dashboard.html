@@ -126,8 +126,7 @@
               method: 'POST'
             });
             // if logout succeeded, redirect to index.html
-            if (res.ok) { window.location}
-
+            if (res.ok) { window.location.href = '/'; }
           } catch (err) {
             error.value = err.message;
             message.value = '';
