@@ -58,7 +58,10 @@
                 popup1(){
                     showPopup1 = true;
                 },
-                
+                closePopup1(){
+                    showPopup1 = false;
+                    showPopup2 = true;
+                }
             },
             mounted() {
                 this.fetchDogURL();
