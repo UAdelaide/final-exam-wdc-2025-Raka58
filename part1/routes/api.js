@@ -6,7 +6,7 @@ module.exports = function(db) {
     /* GET /api/dogs */
     router.get('/dogs', async (req, res) => {
         try {
-
+            
         }catch(err){
             res.status(500).json({ error: 'Failed to fetch dogs' });
         }
