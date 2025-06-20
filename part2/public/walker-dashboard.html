@@ -52,7 +52,7 @@
           try {
             const res = await fetch('/api/users/me');
             const data = await res.json();
-            user.value = data.user_id;
+            user.value = data;
           } catch (err) {
             error.value = err.message;
         }
