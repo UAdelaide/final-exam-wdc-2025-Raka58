@@ -166,7 +166,8 @@ let db;
         WHERE d.name = 'Fred' AND wr.status = completed
         LIMIT 1),
         (SELECT user_id FROM Users u
-        JOIN )
+        JOIN Dogs d ON u.user_id = d.owner_id
+        WHERE )
       `);
     }
 
