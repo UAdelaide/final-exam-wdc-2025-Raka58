@@ -105,7 +105,7 @@
               throw new Error('Failed to fetch dogs information');
             }
             this.dogs = await res.json();
-            // for each dog, add a photoURL using the dogs.ceo API
+            // for each dog, add a photoURL property using the dogs.ceo API
             for (let dog of this.dogs){
               try{
                 const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -123,6 +123,7 @@
             alert('Error loading dogs: ' + err);
             this.dogs = [];
           }
+          // set loadingDogs to false once finished 
           this.loadingDogs = false;
         }
       },
