@@ -37,9 +37,9 @@ module.exports = function(db) {
     /* GET /api/walkers/summary */
     router.get('/walkers/summary', async (req, res) => {
         try {
-            // 
+            // found out about COUNT(DISTINCT ...) at
             const [rows] = await db.execute(`
-                SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings,
+                SELECT u.username AS walker_username, COUNT(DISTINCT wrt.rating_id) AS total_ratings,
                 AVG(wrt.rating) AS average_rating, COUNT(wrq.request_id) AS completed_walks
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'accepted'
