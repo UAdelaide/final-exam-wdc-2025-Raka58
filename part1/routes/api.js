@@ -6,7 +6,8 @@ module.exports = function(db) {
     /* GET /api/dogs */
     router.get('/dogs', async (req, res) => {
         try {
-            
+            // for each dog, returns:
+            // dog_name, size and owner_username
             const [rows] = await db.execute(`
                 SELECT d.name AS dog_name, d.size, u.username AS owner_username
                 FROM Dogs d
