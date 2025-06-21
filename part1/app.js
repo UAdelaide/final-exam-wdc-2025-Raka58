@@ -159,15 +159,7 @@ let db;
     const [walkRatingsRows] = await db.execute('SELECT COUNT(*) AS count FROM walkRatings');
     if (walkRatingsRows[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkApplications (request_id, walker_id, status)
-        VALUES
-        ((SELECT request_id FROM WalkRequests wr
-        JOIN Dogs d ON wr.dog_id = d.dog_id
-        WHERE d.name = 'Fred' AND wr.status = completed
-        LIMIT 1),
-        (SELECT user_id FROM Users
-        WHERE username = 'bobwalker'),
-        'accepted')
+        INSERT INTO WalkRatings (
       `);
     }
 
