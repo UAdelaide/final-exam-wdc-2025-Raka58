@@ -171,7 +171,7 @@ let db;
         JOIN Dogs d ON u.user_id = d.owner_id
         WHERE d.name = 'Fred'),
         5,
-        'Very friendly!'
+        'Very friendly!')
       `);
     }
 
