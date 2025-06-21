@@ -86,6 +86,7 @@
             methods: {
                 async fetchDogURL(){
                     try {
+                        // 
                         var res = await fetch('https://dog.ceo/api/breeds/image/random');
                         var data = await res.json();
                         this.dogImageURL = data.message;
