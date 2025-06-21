@@ -140,6 +140,19 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Opal'), '2025-06-12 10:00:00', 40, 'Aston St', 'open')
       `);
     }
+    // Insert data if WalkApplications table is empty
+    const [walkRequestsRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    if (walkRequestsRows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        VALUES
+        ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Fred'), '2025-06-11 09:00:00', 70, 'Church Pl', 'completed'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Milly'), '2025-06-12 07:30:00', 35, 'Swan Park', 'cancelled'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Opal'), '2025-06-12 10:00:00', 40, 'Aston St', 'open')
+      `);
+    }
 
     // now make the api router after db is set up
     var apiRouter = require('./routes/api')(db);
