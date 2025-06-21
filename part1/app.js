@@ -148,7 +148,7 @@ let db;
         VALUES
         ((SELECT request_id FROM WalkRequests wr
         JOIN Dogs d ON wr.dog_id = d.dog_id
-        WHERE d.name = 'Fred' AND wr.status = completed
+        WHERE d.name = 'Fred' AND wr.status = 'completed'
         LIMIT 1),
         (SELECT user_id FROM Users
         WHERE username = 'bobwalker'),
