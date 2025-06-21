@@ -44,8 +44,8 @@ module.exports = function(db) {
             // for each walker, returns:
             // walker_username, total_ratings, average_rating and completed_walks
 
-            // note: using LEFT JOIN so that walkers with no matching walkapplications, walkrequests or
-            // walkratings are not excluded from the data (instead the COUNTs will return 0)
+            // note: using LEFT JOIN so that walkers with no matching walkapplications, walkrequests
+            // or walkratings are not excluded from the data (instead the COUNTs will return 0)
             const [rows] = await db.execute(`
                 SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings,
                 AVG(wrt.rating) AS average_rating, COUNT(wrq.request_id) AS completed_walks
