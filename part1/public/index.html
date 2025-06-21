@@ -55,6 +55,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- popups -->
         <div v-if="showPopup1" class="popup">
             <button @click="closePopup1">x</button>
             <h1 class="flashing-text">Sign up for our newsletter!</h1>
@@ -63,6 +64,7 @@
             <button @click="closePopup2">x</button>
             <h1 class="flashing-text">Follow us on Facebook!</h1>
         </div>
+        
         <div v-else>
             <h1 class="flashing-text">Meet our Dog of the Day!</h1>
             <img :src="dogImageURL">
