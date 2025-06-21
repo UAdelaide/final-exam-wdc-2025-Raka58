@@ -99,12 +99,13 @@
         },
         async loadDogs(){
           try{
-            // GET dogs' name, size and owner
+            // GET dogs' name, size and owner name from /api/dogs
             const res = await fetch('/api/dogs');
             if(!res.ok){
               throw new Error('Failed to fetch dogs information');
             }
             this.dogs = await res.json();
+            // for each dog, add 
             for (let dog of this.dogs){
               try{
                 const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
