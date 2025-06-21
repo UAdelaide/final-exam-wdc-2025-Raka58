@@ -170,7 +170,7 @@ let db;
         (SELECT user_id FROM Users u
         JOIN Dogs d ON u.user_id = d.owner_id
         WHERE d.name = 'Fred'),
-
+        
       `);
     }
 
