@@ -141,7 +141,7 @@ let db;
       `);
     }
     // Insert data if WalkApplications table is empty
-    const [walkApplicationsRows] = await db.execute('SELECT COUNT(*) AS count FROM walkApplications');
+    const [walkApplicationsRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (walkApplicationsRows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status)
@@ -156,7 +156,7 @@ let db;
       `);
     }
     // Insert data if walkRatings table is empty
-    const [walkRatingsRows] = await db.execute('SELECT COUNT(*) AS count FROM walkRatings');
+    const [walkRatingsRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (walkRatingsRows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
