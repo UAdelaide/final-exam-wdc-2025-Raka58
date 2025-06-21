@@ -166,7 +166,7 @@ let db;
         WHERE d.name = 'Fred' AND wr.status = completed
         LIMIT 1),
         (SELECT user_id FROM Users
-        WHERE username = ')
+        WHERE username = 'alice123')
       `);
     }
 
