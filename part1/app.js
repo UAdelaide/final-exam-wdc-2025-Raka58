@@ -146,11 +146,7 @@ let db;
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status)
         VALUES
-        ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Fred'), '2025-06-11 09:00:00', 70, 'Church Pl', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Milly'), '2025-06-12 07:30:00', 35, 'Swan Park', 'cancelled'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Opal'), '2025-06-12 10:00:00', 40, 'Aston St', 'open')
+        (SELECT )
       `);
     }
 
