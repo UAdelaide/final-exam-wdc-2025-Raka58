@@ -150,8 +150,8 @@ let db;
         JOIN Dogs d ON wr.dog_id = d.dog_id
         WHERE d.name = 'Fred' AND wr.status = completed
         LIMIT 1),
-        (SELECT user_id FROM Users
-        WHERE us),
+        (SELECT user_id FROM Users u
+        WHERE u.username = 'bobwalker'),
         'accepted')
       `);
     }
