@@ -20,6 +20,8 @@ module.exports = function(db) {
     /* GET /api/walkrequests/open */
     router.get('/walkrequests/open', async (req, res) => {
         try {
+            // for each open walkrequest, returns:
+            
             const [rows] = await db.execute(`
                 SELECT wr.request_id, d.name AS dog_name, wr.requested_time,
                     wr.duration_minutes, wr.location, u.username AS owner_username
