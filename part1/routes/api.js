@@ -37,11 +37,9 @@ module.exports = function(db) {
     /* GET /api/walkers/summary */
     router.get('/walkers/summary', async (req, res) => {
         try {
-            // found out about COUNT(DISTINCT ...) at:
-            // https://stackoverflow.com/questions/71385643/count-with-multiple-left-joins
             const [rows] = await db.execute(`
                 SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings,
-                AVG(wrt.rating) AS average_rating, COUNT(DISTINCT wrq.request_id) AS completed_walks
+                AVG(wrt.rating) AS average_rating, COUNT(wrq.request_id) AS completed_walks
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'accepted'
                 LEFT JOIN WalkRequests wrq ON wa.request_id = wrq.request_id AND wrq.status = 'completed'
