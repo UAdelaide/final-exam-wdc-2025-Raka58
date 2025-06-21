@@ -37,6 +37,7 @@ module.exports = function(db) {
     /* GET /api/walkers/summary */
     router.get('/walkers/summary', async (req, res) => {
         try {
+            // returns 
             const [rows] = await db.execute(`
                 SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings,
                 AVG(wrt.rating) AS average_rating, COUNT(wrq.request_id) AS completed_walks
