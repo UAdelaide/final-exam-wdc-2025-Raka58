@@ -40,7 +40,7 @@ module.exports = function(db) {
             // found out about COUNT(DISTINCT ...) at:
             // https://stackoverflow.com/questions/71385643/count-with-multiple-left-joins
             const [rows] = await db.execute(`
-                SELECT u.username AS walker_username, COUNT(DISTINCT wrt.rating_id) AS total_ratings,
+                SELECT u.username AS walker_username, COUNT(wrt.rating_id) AS total_ratings,
                 AVG(wrt.rating) AS average_rating, COUNT(DISTINCT wrq.request_id) AS completed_walks
                 FROM Users u
                 LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id AND wa.status = 'accepted'
