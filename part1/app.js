@@ -148,7 +148,7 @@ let db;
         VALUES
         ((SELECT request_id FROM WalkRequests wr
         JOIN Dogs d ON wr.dog_id = d.dog_id
-        WHERE ),
+        WHERE d.name = 'Fred'),
         (SELECT user_id FROM Users),
         'accepted')
       `);
